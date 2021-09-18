@@ -1,11 +1,12 @@
 import React from 'react';
-import ImageCardList from './components/ImageCardList.js'
+import ImageCardList from './components/ImageCardList/ImageCardList.js'
+import Header from './components/Header/Header.js'
 import './App.css';
 
 function App() {
     return (
       <div className="App">
-        <h1>Spacestagram</h1>
+        <Header />
         <ImageCardList/>
       </div>
     );

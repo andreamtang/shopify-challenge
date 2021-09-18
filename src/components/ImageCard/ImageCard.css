@@ -1,0 +1,38 @@
+.Card {
+  border: 0.5px solid #CFCCCC;
+}
+
+.Card, 
+.CardImage {
+  border-radius: 15px;
+}
+
+.CardHeader {
+  padding: 1.5rem 1.5rem 0;
+}
+
+.CardBody {
+  padding: 1.5rem;
+}
+
+.CardTitle, 
+.CardDate {
+  font-family: Helvetica;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  line-height: 21px;
+}
+
+.CardTitle {
+  font-weight: 700;
+}
+
+.CardDate {
+  font-weight: 300;
+}
+
+.CardDescription {
+  font-family: Helvetica;
+  color: #CFCCCC !important;
+  font-size: 14px;
+}

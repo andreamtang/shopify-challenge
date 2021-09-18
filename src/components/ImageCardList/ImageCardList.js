@@ -1,6 +1,8 @@
 import React from 'react';
-import ImageCard from './ImageCard.js';
+import ImageCard from '../ImageCard/ImageCard.js';
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Col, Row } from 'react-bootstrap';
 
 const API_KEY = '49gRciJcK9SCUEdVg3J4exN2A6cIo1pfM6Hs7zjL'
 const IMAGE_COUNT = 6
@@ -25,22 +27,26 @@ class ImageCardList extends React.Component {
       })
       .catch(error => {
         console.log(error);
-        this.setState({data: [] });
+        this.setState({ data: [] });
       });
   }
 
   render() {
     return (
-      <div>
-        {this.state.data.map(imageData => (
-          <ImageCard
-            key={imageData.url}
-            title={imageData.title}
-            description={imageData.explanation}
-            url={imageData.url}
-          />
-        ))}
-      </div>
+      <Container className="mt-5">
+        <Row xs={1} sm={1} md={2} lg={3}>
+          {this.state.data.map(imageData => (
+            <Col key={imageData.url}>
+              <ImageCard
+                title={imageData.title}
+                date={imageData.date}
+                description={imageData.explanation}
+                url={imageData.url}
+              />
+            </Col>
+          ))}
+        </Row>
+      </Container>
     );
   }
 }
