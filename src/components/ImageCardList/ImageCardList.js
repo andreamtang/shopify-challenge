@@ -35,15 +35,17 @@ class ImageCardList extends React.Component {
     return (
       <Container className="mt-5">
         <Row xs={1} sm={1} md={2} lg={3}>
-          {this.state.data.map(imageData => (
-            <Col key={imageData.url}>
-              <ImageCard
-                title={imageData.title}
-                date={imageData.date}
-                description={imageData.explanation}
-                url={imageData.url}
-              />
-            </Col>
+          {this.state.data.map(imageData => ( 
+            imageData.media_type === "image" && (
+              <Col key={imageData.url}>
+                <ImageCard
+                  title={imageData.title}
+                  date={imageData.date}
+                  description={imageData.explanation}
+                  url={imageData.url}
+                />
+              </Col>
+            )
           ))}
         </Row>
       </Container>

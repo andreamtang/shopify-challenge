@@ -15,6 +15,21 @@
   padding: 1.5rem;
 }
 
+.CardButton { 
+  color: #CFCCCC;
+  padding: 0 .75rem .4rem 0;
+}
+
+.CardButton:hover {
+  color: #CFCCCC;
+}
+
+.CardButton:focus,
+.CardButton:active {
+  box-shadow: none;
+  outline: 0px;
+}
+
 .CardTitle, 
 .CardDate {
   font-family: Helvetica;
@@ -35,4 +50,12 @@
   font-family: Helvetica;
   color: #CFCCCC !important;
   font-size: 14px;
+}
+
+.read-more-button {
+  display: inline-block;
+  margin-left: 3px;
+  color: #949494;
+  text-decoration: underline;
+  cursor: pointer;
 }
