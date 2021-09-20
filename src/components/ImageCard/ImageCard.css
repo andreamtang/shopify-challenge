@@ -30,6 +30,14 @@
   outline: 0px;
 }
 
+.tooltip-inner {
+  background-color: white;
+  color: #1D2630;
+  font-family: Helvetica;
+  font-weight: 400;
+  font-size: 14px;
+}
+
 .CardTitle, 
 .CardDate {
   font-family: Helvetica;
@@ -56,6 +64,5 @@
   display: inline-block;
   margin-left: 3px;
   color: #949494;
-  text-decoration: underline;
   cursor: pointer;
 }

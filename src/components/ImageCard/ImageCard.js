@@ -1,19 +1,31 @@
 import React from 'react';
 import ReadMoreReact from 'read-more-react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Card, Button } from 'react-bootstrap';
-import { BsHeartFill, BsHeart } from 'react-icons/bs'
+import { Card, Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { BsHeartFill, BsHeart, BsLink45Deg, BsClipboard } from 'react-icons/bs'
 import './ImageCard.css';
 
 class ImageCard extends React.Component {
   state = {
-    liked: false
+    isLiked: false,
+    showTooltip: false
   }
 
-  toggleLike = (state) => {
+  toggleLike = () => {
     this.setState({
-      liked: !this.state.liked
+      isLiked: !this.state.isLiked
     })
+  }
+
+  copyToClipboard = () => {
+    navigator.clipboard.writeText(this.props.url);
+    this.setState({
+      showTooltip: true
+    })
+
+    setTimeout( () => {
+      this.setState({showTooltip: false}); 
+    }, 1500)
   }
   
   render() {
@@ -24,18 +36,35 @@ class ImageCard extends React.Component {
         </Card.Header>
         <Card.Body className="CardBody">
           <Button 
+            role="button" 
+            aria-label="Like/Unlike button"
             variant="link" 
             className="CardButton" 
             onClick={this.toggleLike}>
-            {this.state.liked ? <BsHeartFill/> : <BsHeart/>}
+            {this.state.isLiked ? <BsHeartFill size="1.5em"/> : <BsHeart size="1.5em"/>}
           </Button>
+          <OverlayTrigger key='right' placement='top' trigger='click'
+            overlay={this.state.showTooltip? 
+            <Tooltip className="CardTooltip"><BsClipboard/> Copied to Clipboard</Tooltip> 
+            : 
+            <div />}
+          >
+            <Button 
+              role="button" 
+              aria-label="Share link button"
+              variant="link" 
+              className="CardButton" 
+              onClick={this.copyToClipboard}>
+              <BsLink45Deg size="1.5em"/>
+            </Button>
+          </OverlayTrigger>
           <Card.Title className="text-light CardTitle">
             <span className="CardTitle">{this.props.title}</span> • <span className="CardDate">{this.props.date}</span>
           </Card.Title>
           <div className="mb-2 CardDescription">
             <ReadMoreReact 
               text={this.props.description} 
-              readMoreText="more"
+              readMoreText="... more"
             />
           </div>
         </Card.Body>
