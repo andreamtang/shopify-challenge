@@ -27,12 +27,22 @@ class ImageCard extends React.Component {
       this.setState({showTooltip: false}); 
     }, 1500)
   }
-  
+
+  renderMedia = () => {
+    if (this.props.mediaType === "image") {
+      return (
+        <Card.Img className="CardMedia" variant="top" src={this.props.url} alt="" />
+      );
+    } else return (
+      <iframe className="CardMedia" title={this.props.title} src={this.props.url} allowfullscreen></iframe>
+    );
+  }
+
   render() {
     return (
       <Card className="mb-5 mx-auto bg-transparent Card" >
         <Card.Header className="border-bottom-0 CardHeader">
-          <Card.Img className="CardImage" variant="top" src={this.props.url} alt="" />
+          {this.renderMedia()}
         </Card.Header>
         <Card.Body className="CardBody">
           <Button 

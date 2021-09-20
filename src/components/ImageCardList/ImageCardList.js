@@ -6,7 +6,7 @@ import { Container, Col, Row, Button, Spinner } from 'react-bootstrap';
 import './ImageCardList.css';
 
 const API_KEY = '49gRciJcK9SCUEdVg3J4exN2A6cIo1pfM6Hs7zjL'
-const IMAGE_COUNT = 9
+const IMAGE_COUNT = 12
 
 class ImageCardList extends React.Component {
   state = {
@@ -42,16 +42,15 @@ class ImageCardList extends React.Component {
       <Container className="pb-5 ImageCardListContainer">
         <Row xs={1} sm={1} md={2} lg={3}>
           {this.state.images.map(imageData => ( 
-            imageData.media_type === "image" && (
-              <Col key={imageData.url}>
-                <ImageCard
-                  title={imageData.title}
-                  date={imageData.date}
-                  description={imageData.explanation}
-                  url={imageData.url}
-                />
-              </Col>
-            )
+            <Col key={imageData.url}>
+              <ImageCard
+                title={imageData.title}
+                date={imageData.date}
+                description={imageData.explanation}
+                url={imageData.url}
+                mediaType={imageData.media_type}
+              />
+            </Col>
           ))}
         </Row>
         <div className="text-center">
