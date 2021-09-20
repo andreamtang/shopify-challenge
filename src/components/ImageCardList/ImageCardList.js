@@ -39,7 +39,7 @@ class ImageCardList extends React.Component {
 
   render() {
     return (
-      <Container className="pt-5 pb-5">
+      <Container className="pb-5 ImageCardListContainer">
         <Row xs={1} sm={1} md={2} lg={3}>
           {this.state.images.map(imageData => ( 
             imageData.media_type === "image" && (
