@@ -1,0 +1,7 @@
+.Button {
+  border-radius: 40px;
+  font-family: Helvetica;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  padding: .475rem 1.5rem;
+}
