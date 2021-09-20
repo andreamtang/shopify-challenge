@@ -2,15 +2,16 @@ import React from 'react';
 import ImageCard from '../ImageCard/ImageCard.js';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Col, Row, Button } from 'react-bootstrap';
+import { Container, Col, Row, Button, Spinner } from 'react-bootstrap';
 import './ImageCardList.css';
 
 const API_KEY = '49gRciJcK9SCUEdVg3J4exN2A6cIo1pfM6Hs7zjL'
-const IMAGE_COUNT = 6
+const IMAGE_COUNT = 9
 
 class ImageCardList extends React.Component {
   state = {
-    images: []
+    images: [],
+    isLoading: true
   }
 
   componentDidMount() {
@@ -18,16 +19,21 @@ class ImageCardList extends React.Component {
   }
 
   fetchImages = async () => {
+    this.setState({ isLoading: true });
     try {
       const res = await axios.get(`https://api.nasa.gov/planetary/apod?count=${IMAGE_COUNT}&api_key=${API_KEY}`);
       const data = res.data;
-      this.setState({ images: [...this.state.images, ...data] });
+      this.setState({ 
+        images: [...this.state.images, ...data], 
+        isLoading: false });
 
       console.log(data);
     }
     catch (error) {
       console.error(error);
-      this.setState({ images: this.state.images });
+      this.setState({ 
+        images: this.state.images, 
+        isLoading: false });
     }
   }
 
@@ -49,7 +55,11 @@ class ImageCardList extends React.Component {
           ))}
         </Row>
         <div className="text-center">
-          <Button variant="outline-light" className="Button" onClick={this.fetchImages}>Load More</Button>
+          {(this.state.isLoading ?
+            <Spinner animation="border" variant="light" />
+            :
+            <Button variant="outline-light" className="Button" onClick={this.fetchImages}>Load More</Button>
+          )}
         </div>
       </Container>
     );
