@@ -51,7 +51,11 @@ class ImageCard extends React.Component {
             variant="link" 
             className="CardButton" 
             onClick={this.toggleLike}>
-            {this.state.isLiked ? <BsHeartFill size="1.5em"/> : <BsHeart size="1.5em"/>}
+            {this.state.isLiked ? 
+              <BsHeartFill size="1.5em"/> 
+              : 
+              <BsHeart size="1.5em"/>
+            }
           </Button>
           <OverlayTrigger key='right' placement='top' trigger='click'
             overlay={this.state.showTooltip? 

@@ -1,5 +1,5 @@
 .ImageCardListContainer {
-  padding-top: 190px;
+  padding-top: 170px;
 }
 
 .Button {
@@ -8,4 +8,26 @@
   font-size: 16px;
   letter-spacing: 0.05em;
   padding: .475rem 1.5rem;
+}
+
+.UpArrow {
+  position: fixed;
+  cursor: pointer;
+  bottom: 15px;
+  right: 15px;
+  color: #ffffff;
+  background-color: #3F2D31;
+  width: 45px;
+  height: 45px;
+  border: 1px solid #CFCCCC;
+  border-radius: 15px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  padding: 0.5rem;
+  box-shadow: 4px 4px 25px 4px rgba(88, 88, 88, 0.25);
+}
+
+.UpArrow:hover {
+  color: black;
+  background-color: white;
 }

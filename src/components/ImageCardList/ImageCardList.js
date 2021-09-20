@@ -3,6 +3,7 @@ import ImageCard from '../ImageCard/ImageCard.js';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Col, Row, Button, Spinner } from 'react-bootstrap';
+import { BsArrowUp } from 'react-icons/bs'
 import './ImageCardList.css';
 
 const API_KEY = '49gRciJcK9SCUEdVg3J4exN2A6cIo1pfM6Hs7zjL'
@@ -11,11 +12,17 @@ const IMAGE_COUNT = 12
 class ImageCardList extends React.Component {
   state = {
     images: [],
-    isLoading: true
+    isLoading: true,
+    isScrollToTopVisible: false
   }
 
   componentDidMount() {
     this.fetchImages();
+    
+    var scrollComponent = this;
+    document.addEventListener("scroll", function(e) {
+      scrollComponent.toggleVisibility();
+    });
   }
 
   fetchImages = async () => {
@@ -37,7 +44,27 @@ class ImageCardList extends React.Component {
     }
   }
 
+  toggleVisibility() {
+    if (window.pageYOffset > 300) {
+      this.setState({
+        isScrollToTopVisible: true
+      });
+    } else {
+      this.setState({
+        isScrollToTopVisible: false
+      });
+    }
+  }
+
+  scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
   render() {
+    const { isScrollToTopVisible } = this.state;
     return (
       <Container className="pb-5 ImageCardListContainer">
         <Row xs={1} sm={1} md={2} lg={3}>
@@ -60,6 +87,9 @@ class ImageCardList extends React.Component {
             <Button variant="outline-light" className="Button" onClick={this.fetchImages}>Load More</Button>
           )}
         </div>
+        {isScrollToTopVisible && (
+          <BsArrowUp className="UpArrow" onClick={() => this.scrollToTop()}/>
+        )}
       </Container>
     );
   }
