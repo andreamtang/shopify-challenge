@@ -34,7 +34,7 @@ class ImageCard extends React.Component {
         <Card.Img className="CardMedia" variant="top" src={this.props.url} alt="" />
       );
     } else return (
-      <iframe className="CardMedia" title={this.props.title} src={this.props.url} allowfullscreen></iframe>
+      <iframe className="CardMedia" title={this.props.title} src={this.props.url} allowFullScreen></iframe>
     );
   }
 

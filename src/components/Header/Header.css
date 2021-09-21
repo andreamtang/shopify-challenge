@@ -1,6 +1,6 @@
 .Header {
   display: block;
-  font-family: 'Neutral Face';
+  font-family: 'Neutral Face', Helvetica, Arial, sans-serif;
   color: white;
   text-align: center;
   border-bottom: 1px solid #FFFFFF;

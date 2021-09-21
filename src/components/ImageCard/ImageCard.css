@@ -33,14 +33,14 @@
 .tooltip-inner {
   background-color: white;
   color: #1D2630;
-  font-family: Helvetica;
+  font-family: Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size: 14px;
 }
 
 .CardTitle, 
 .CardDate {
-  font-family: Helvetica;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 16px;
   letter-spacing: 0.05em;
   line-height: 21px;
@@ -55,7 +55,7 @@
 }
 
 .CardDescription {
-  font-family: Helvetica;
+  font-family: Helvetica, Arial, sans-serif;
   color: #CFCCCC !important;
   font-size: 14px;
 }
