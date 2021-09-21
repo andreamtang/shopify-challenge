@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# Shopify Frontend Developer Intern Challenge (Winter 2022)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Spacestagram Demo
 
-## Available Scripts
+The deployed version can be found at: https://shopify-challenge-at.netlify.app/
 
-In the project directory, you can run:
+## Getting Started
 
-### `yarn start`
+1. Clone the repo: `git clone https://github.com/andreamtang/shopify-challenge.git`
+2. Install dependencies: `yarn install` 
+3. Start the application: `yarn start`
+4. View the application at http://localhost:3000
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Features
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Technical Requirements
 
-### `yarn test`
+☑️ Search results should come from NASA’s free APIs, for which you’ll need a free API key from https://api.nasa.gov
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+☑️ Each image result should list at least a title, date of capture (ideally in earth_date) and a button to “like” that image.
 
-### `yarn build`
+☑️ Each image can be “liked”, and a user should be able to undo their “like”
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+☑️ The HTML that ends up being served client-side should be accessible and semantic (MDN reference)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Additional Notes
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+In an effort to enhance the user experience, I chose to include a few changes in addition to the suggested design:
 
-### `yarn eject`
+1. The options to load more content and scroll to top upon reaching the end of the page creates a more engaging experience than pagination.
+2. The animated spinner provides a visual clue that content is loading.
+3. Descriptions for each image are truncated in order to avoid a text-heavy page.
+4. Users can interact with content (i.e., link sharing and "liking") by clicking icons, rather than text buttons, creating a more visually interesting experience.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Technologies Used
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [ReactJS](https://reactjs.org/)
+- [Axios](https://www.npmjs.com/package/axios)
+- [React Bootstrap](https://react-bootstrap.github.io/)
+- [NASA Open API](https://api.nasa.gov/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Future Improvements
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Given the time constraint, I was unable to include everything that I would ideally want for this project. Some things that can be implemented in the future are:
 
-## Learn More
+- Including the option to display content in chronological order and/or within a specific date range. 
+- The ability to store a user's 'likes' so that they are retained if the user leaves or reloads the page.
+- An animated background that resembles a starry night sky to further convey the feeling of outer space.
+- Serving the API key with a .env file.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Screenshots
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<p align="center">
+<img width="500" alt="Screen Shot 2021-09-20 at 6 13 14 PM" src="https://user-images.githubusercontent.com/32750252/134097474-b6b36376-420d-45e7-8700-d8600b8a9dcc.png">
+  <br> The page upon load.
+</p>
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p align="center">
+<img width="500" alt="Screen Shot 2021-09-20 at 6 18 36 PM" src="https://user-images.githubusercontent.com/32750252/134097820-25944a5c-76c7-402c-a823-b0c81cba1d5a.png">
+  <br> The bottom of the page. Some images have been "liked".
+</p>
