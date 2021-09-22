@@ -46,6 +46,7 @@ Given the time constraint, I was unable to include everything that I would ideal
 - Including the option to display content in chronological order and/or within a specific date range. 
 - The ability to store a user's 'likes' so that they are retained if the user leaves or reloads the page.
 - An animated background that resembles a starry night sky to further convey the feeling of outer space.
+- Crop images (with the option to view the original image in a modal) so that all cards are of equal height to create a cleaner look. Alternatively, a masonry layout could be used instead of a grid.
 - Serving the API key with a .env file.
 
 ## Screenshots
